@@ -47,10 +47,14 @@ app = FastAPI(
 # CORS Configuration - Allow React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # React dev servers
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://vitalscan-frontend.onrender.com"  # add your render URL
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # ─────────────────────────────
