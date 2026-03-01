@@ -1,0 +1,7 @@
+# Training data directory
+# Place your .csv files here for reference:
+# - training_data.csv
+# - patient_records.csv
+#
+# These files can be used for model evaluation and retraining.
+# The backend does not load these at runtime.

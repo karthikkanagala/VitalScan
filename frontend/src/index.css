@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #0a0a0a; color: #ffffff; font-family: system-ui; overflow-x: hidden; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#00ff88, #00d4ff); border-radius: 2px; }
+
+/* Slider styling */
+input[type=range] { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px; outline: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #00ff88; border: 2px solid #0a0a0a; box-shadow: 0 0 10px rgba(0,255,136,0.5); cursor: pointer; }
+
+/* Keyframe animations */
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(40px,-60px) scale(1.08)} 66%{transform:translate(-30px,30px) scale(0.93)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-50px,40px) scale(0.95)} 66%{transform:translate(30px,-20px) scale(1.05)} }
+@keyframes float3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,-40px)} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes slideUp { from{opacity:0;transform:translateY(80px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideLeft { from{opacity:0;transform:translateX(-80px)} to{opacity:1;transform:translateX(0)} }
+@keyframes slideRight { from{opacity:0;transform:translateX(80px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
+@keyframes glow { 0%,100%{box-shadow:0 0 20px rgba(0,255,136,0.3)} 50%{box-shadow:0 0 40px rgba(0,255,136,0.7)} }
+@keyframes scanline { 0%{top:-2px} 100%{top:100vh} }
+@keyframes particleRise { 0%{transform:translateY(0) translateX(0);opacity:0} 10%{opacity:1} 90%{opacity:0.6} 100%{transform:translateY(-100vh) translateX(50px);opacity:0} }
+@keyframes typewriter { from{width:0} to{width:100%} }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+@keyframes borderGlow { 0%,100%{border-color:rgba(0,255,136,0.3)} 50%{border-color:rgba(0,212,255,0.8)} }
+@keyframes countUp { from{opacity:0;transform:translateY(20px) scale(0.5)} to{opacity:1;transform:translateY(0) scale(1)} }
+@keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+@keyframes rotateGradient { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+/* Scroll reveal utility */
+.reveal { opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-80px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(80px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* Card hover */
+.card { transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease, border-color 0.4s ease; }
+.card:hover { transform: translateY(-12px) scale(1.02); }
+
+/* Gradient text */
+.grad-text { background: linear-gradient(135deg, #00ff88, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Navbar */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; transition: all 0.4s ease; }
+.navbar.scrolled { background: rgba(4,6,5,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(0,255,136,0.12); }
+
+/* Page offset for fixed navbar */
+.page-content { padding-top: 72px; }

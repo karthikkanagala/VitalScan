@@ -1,0 +1,7 @@
+# ML Models directory
+# Place your pretrained .pkl files here:
+# - heart_model.pkl
+# - diabetes_model.pkl
+#
+# These models are loaded at startup by the prediction engine.
+# If missing, the backend uses fallback calculations.
